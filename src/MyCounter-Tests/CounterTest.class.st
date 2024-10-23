@@ -8,6 +8,13 @@ Class {
 	#package : 'MyCounter-Tests'
 }
 
+{ #category : 'running' }
+CounterTest >> setUp [
+	super setUp.
+	"This method runs before each test, initializing a new counter."
+	counter := Counter new.  "Initialize the counter before each test"
+]
+
 { #category : 'tests' }
 CounterTest >> testAlternateCreationMethod [
 	self assert: ((Counter startingAt: 19) increment ; count) equals: 20
