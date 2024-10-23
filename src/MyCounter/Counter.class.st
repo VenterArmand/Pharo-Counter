@@ -12,6 +12,11 @@ Class {
 }
 
 { #category : 'accessing' }
+Counter class >> startingAt: startingNumber [
+	^ self new count: startingNumber.
+]
+
+{ #category : 'accessing' }
 Counter >> count [
 	^count.
 ]
@@ -31,4 +36,16 @@ Counter >> decrement [
 Counter >> increment [
 	count:= count + 1.
 	^count.
+]
+
+{ #category : 'initialization' }
+Counter >> initialize [
+	count:= 0.
+]
+
+{ #category : 'printing' }
+Counter >> printOn: aStream [
+	"This method prints the current value of the counter using the stream's #print: method."
+   aStream nextPutAll: 'Counter value: '.
+   aStream print: count.
 ]
